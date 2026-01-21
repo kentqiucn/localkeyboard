@@ -39,7 +39,9 @@
     "save": "保存",
     "unchanged": "未更改",
     "unknown": "未知",
-    "noItemInClipboard": "剪贴板为空"
+    "noItemInClipboard": "剪贴板为空",
+    "paste": "粘贴",
+    "clear": "清空"
   },
   "receiveTab": {
     "title": "接收",
@@ -522,5 +524,33 @@
     "preview": "预览",
     "whitelist": "白名单",
     "blacklist": "黑名单"
+  },
+  "remoteKeyboard": {
+    "title": "远程键盘",
+    "enterAddress": "输入接收端地址 (IP:端口)",
+    "receiver": {
+      "title": "接收输入",
+      "description": "开始监听以接收来自远程设备的键盘输入。连接设备上输入的文本将显示在这里并复制到剪贴板。",
+      "listening": "监听中",
+      "start": "开始监听",
+      "stop": "停止监听",
+      "address": "连接地址",
+      "connectedDevices": "已连接设备",
+      "receivedText": "接收到的文本",
+      "waitingForInput": "等待输入..."
+    },
+    "sender": {
+      "title": "发送输入",
+      "description": "连接到远程设备并发送键盘输入。您在这里输入的文本将显示在连接的设备上。",
+      "connected": "已连接",
+      "scan": "扫描接收端",
+      "scanning": "扫描中...",
+      "manual": "手动输入地址",
+      "discoveredDevices": "发现的设备",
+      "connectedTo": "已连接到",
+      "disconnect": "断开连接",
+      "inputHint": "在此输入文本以发送到远程设备...",
+      "inputDescription": "文本在输入时实时发送。使用粘贴按钮发送剪贴板内容。"
+    }
   }
 }

@@ -39,7 +39,9 @@
     "save": "Save",
     "unchanged": "Unchanged",
     "unknown": "Unknown",
-    "noItemInClipboard": "No items in Clipboard."
+    "noItemInClipboard": "No items in Clipboard.",
+    "paste": "Paste",
+    "clear": "Clear"
   },
   "receiveTab": {
     "title": "Receive",
@@ -531,5 +533,33 @@
     "sActionUseCameraHint": "use camera",
     "sNameDurationLabel": "duration",
     "sUnitAssetCountLabel": "count"
+  },
+  "remoteKeyboard": {
+    "title": "Keyboard",
+    "enterAddress": "Enter receiver address (IP:Port)",
+    "receiver": {
+      "title": "Receive Input",
+      "description": "Start listening to receive keyboard input from remote devices. Text typed on connected devices will appear here and be copied to your clipboard.",
+      "listening": "Listening",
+      "start": "Start Listening",
+      "stop": "Stop Listening",
+      "address": "Connect at",
+      "connectedDevices": "Connected devices",
+      "receivedText": "Received Text",
+      "waitingForInput": "Waiting for input..."
+    },
+    "sender": {
+      "title": "Send Input",
+      "description": "Connect to a remote device and send keyboard input. Text you type here will appear on the connected device.",
+      "connected": "Connected",
+      "scan": "Scan for Receivers",
+      "scanning": "Scanning...",
+      "manual": "Enter Address Manually",
+      "discoveredDevices": "Discovered Devices",
+      "connectedTo": "Connected to",
+      "disconnect": "Disconnect",
+      "inputHint": "Type here to send text to the remote device...",
+      "inputDescription": "Text is sent in real-time as you type. Use paste button to send clipboard content."
+    }
   }
 }
