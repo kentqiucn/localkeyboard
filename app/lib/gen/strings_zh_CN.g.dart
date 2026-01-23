@@ -13,21 +13,30 @@ import 'strings.g.dart';
 class TranslationsZhCn extends Translations {
   /// You can call this constructor and build your own translation instance of this locale.
   /// Constructing via the enum [AppLocale.build] is preferred.
-  TranslationsZhCn({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver})
-    : assert(overrides == null, 'Set "translation_overrides: true" in order to enable this feature.'),
-      $meta = TranslationMetadata(
-        locale: AppLocale.zhCn,
-        overrides: overrides ?? {},
-        cardinalResolver: cardinalResolver,
-        ordinalResolver: ordinalResolver,
-      ),
-      super(cardinalResolver: cardinalResolver, ordinalResolver: ordinalResolver);
+  TranslationsZhCn({
+    Map<String, Node>? overrides,
+    PluralResolver? cardinalResolver,
+    PluralResolver? ordinalResolver,
+    TranslationMetadata<AppLocale, Translations>? meta,
+  }) : assert(overrides == null, 'Set "translation_overrides: true" in order to enable this feature.'),
+       $meta =
+           meta ??
+           TranslationMetadata(
+             locale: AppLocale.zhCn,
+             overrides: overrides ?? {},
+             cardinalResolver: cardinalResolver,
+             ordinalResolver: ordinalResolver,
+           ),
+       super(cardinalResolver: cardinalResolver, ordinalResolver: ordinalResolver);
 
   /// Metadata for the translations of <zh-CN>.
   @override
   final TranslationMetadata<AppLocale, Translations> $meta;
 
   late final TranslationsZhCn _root = this; // ignore: unused_field
+
+  @override
+  TranslationsZhCn $copyWith({TranslationMetadata<AppLocale, Translations>? meta}) => TranslationsZhCn(meta: meta ?? this.$meta);
 
   // Translations
   @override
@@ -80,6 +89,8 @@ class TranslationsZhCn extends Translations {
   late final _TranslationsAssetPickerZhCn assetPicker = _TranslationsAssetPickerZhCn._(_root);
   @override
   late final _TranslationsNetworkInterfacesPageZhCn networkInterfacesPage = _TranslationsNetworkInterfacesPageZhCn._(_root);
+  @override
+  late final _TranslationsRemoteKeyboardZhCn remoteKeyboard = _TranslationsRemoteKeyboardZhCn._(_root);
 }
 
 // Path: general
@@ -165,6 +176,10 @@ class _TranslationsGeneralZhCn extends TranslationsGeneralEn {
   String get unknown => '未知';
   @override
   String get noItemInClipboard => '剪贴板为空';
+  @override
+  String get paste => '粘贴';
+  @override
+  String get clear => '清空';
 }
 
 // Path: receiveTab
@@ -749,6 +764,23 @@ class _TranslationsNetworkInterfacesPageZhCn extends TranslationsNetworkInterfac
   String get blacklist => '黑名单';
 }
 
+// Path: remoteKeyboard
+class _TranslationsRemoteKeyboardZhCn extends TranslationsRemoteKeyboardEn {
+  _TranslationsRemoteKeyboardZhCn._(TranslationsZhCn root) : this._root = root, super.internal(root);
+
+  final TranslationsZhCn _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => '远程键盘';
+  @override
+  String get enterAddress => '输入接收端地址 (IP:端口)';
+  @override
+  late final _TranslationsRemoteKeyboardReceiverZhCn receiver = _TranslationsRemoteKeyboardReceiverZhCn._(_root);
+  @override
+  late final _TranslationsRemoteKeyboardSenderZhCn sender = _TranslationsRemoteKeyboardSenderZhCn._(_root);
+}
+
 // Path: receiveTab.infoBox
 class _TranslationsReceiveTabInfoBoxZhCn extends TranslationsReceiveTabInfoBoxEn {
   _TranslationsReceiveTabInfoBoxZhCn._(TranslationsZhCn root) : this._root = root, super.internal(root);
@@ -979,7 +1011,7 @@ class _TranslationsTroubleshootPageFirewallZhCn extends TranslationsTroubleshoot
   @override
   String solution({required Object port}) => '这最可能是由防火墙规则设定引起的。你可以通过在端口 ${port} 上允许（UDP 和 TCP 的）传入请求来解决这个问题。';
   @override
-  String get openFirewallSettings => '打开防火墙';
+  String get openFirewall => '打开防火墙';
 }
 
 // Path: troubleshootPage.noDiscovery
@@ -1393,6 +1425,64 @@ class _TranslationsDialogsZoomZhCn extends TranslationsDialogsZoomEn {
   // Translations
   @override
   String get title => 'URL';
+}
+
+// Path: remoteKeyboard.receiver
+class _TranslationsRemoteKeyboardReceiverZhCn extends TranslationsRemoteKeyboardReceiverEn {
+  _TranslationsRemoteKeyboardReceiverZhCn._(TranslationsZhCn root) : this._root = root, super.internal(root);
+
+  final TranslationsZhCn _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => '接收输入';
+  @override
+  String get description => '开始监听以接收来自远程设备的键盘输入。连接设备上输入的文本将显示在这里并复制到剪贴板。';
+  @override
+  String get listening => '监听中';
+  @override
+  String get start => '开始监听';
+  @override
+  String get stop => '停止监听';
+  @override
+  String get address => '连接地址';
+  @override
+  String get connectedDevices => '已连接设备';
+  @override
+  String get receivedText => '接收到的文本';
+  @override
+  String get waitingForInput => '等待输入...';
+}
+
+// Path: remoteKeyboard.sender
+class _TranslationsRemoteKeyboardSenderZhCn extends TranslationsRemoteKeyboardSenderEn {
+  _TranslationsRemoteKeyboardSenderZhCn._(TranslationsZhCn root) : this._root = root, super.internal(root);
+
+  final TranslationsZhCn _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => '发送输入';
+  @override
+  String get description => '连接到远程设备并发送键盘输入。您在这里输入的文本将显示在连接的设备上。';
+  @override
+  String get connected => '已连接';
+  @override
+  String get scan => '扫描接收端';
+  @override
+  String get scanning => '扫描中...';
+  @override
+  String get manual => '手动输入地址';
+  @override
+  String get discoveredDevices => '发现的设备';
+  @override
+  String get connectedTo => '已连接到';
+  @override
+  String get disconnect => '断开连接';
+  @override
+  String get inputHint => '在此输入文本以发送到远程设备...';
+  @override
+  String get inputDescription => '文本在输入时实时发送。使用粘贴按钮发送剪贴板内容。';
 }
 
 // Path: settingsTab.general.brightnessOptions
